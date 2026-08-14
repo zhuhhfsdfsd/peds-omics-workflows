@@ -61,6 +61,7 @@ def read_instruments(path: str | Path) -> list[Instrument]:
             raise ValueError(f"Missing required columns: {', '.join(sorted(missing))}.")
 
         instruments: list[Instrument] = []
+        seen_variants: set[str] = set()
         for row_number, row in enumerate(reader, start=2):
             if (row.get("aligned") or "").strip().lower() != "true":
                 raise ValueError(
@@ -74,9 +75,15 @@ def read_instruments(path: str | Path) -> list[Instrument]:
                 raise ValueError(f"Row {row_number}: exposure_beta cannot be zero.")
             if exposure_se <= 0 or outcome_se <= 0:
                 raise ValueError(f"Row {row_number}: standard errors must be positive.")
+            variant = (row["variant"] or "").strip()
+            if not variant:
+                raise ValueError(f"Row {row_number}: variant must not be empty.")
+            if variant in seen_variants:
+                raise ValueError(f"Row {row_number}: duplicate variant {variant!r}.")
+            seen_variants.add(variant)
             instruments.append(
                 Instrument(
-                    variant=(row["variant"] or "").strip(),
+                    variant=variant,
                     exposure_beta=exposure_beta,
                     exposure_se=exposure_se,
                     outcome_beta=outcome_beta,

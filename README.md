@@ -58,7 +58,7 @@ The commands create JSON results containing the method, thresholds, summary stat
 
 | Column | Meaning |
 | --- | --- |
-| `variant` | Public variant identifier |
+| `variant` | Unique, non-empty public variant identifier |
 | `exposure_beta`, `exposure_se` | Exposure association and standard error |
 | `outcome_beta`, `outcome_se` | Outcome association and standard error |
 | `aligned` | Must be `true`; confirms prior allele harmonisation |
@@ -67,11 +67,11 @@ The commands create JSON results containing the method, thresholds, summary stat
 
 | Column | Meaning |
 | --- | --- |
-| `cell_id` | Non-identifying cell identifier |
+| `cell_id` | Unique, non-empty, non-identifying cell identifier |
 | `total_counts` | Per-cell total count |
 | `n_genes` | Detected genes per cell |
 | `mito_fraction` | Mitochondrial fraction, 0–1 |
-| `cell_type` | Existing annotation, or `unassigned` |
+| `cell_type` | Existing annotation; blank values are normalised to `unassigned` |
 
 ## Commands
 

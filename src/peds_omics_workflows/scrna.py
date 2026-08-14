@@ -30,16 +30,24 @@ def read_cell_metadata(path: str | Path) -> list[dict[str, str | float]]:
         if missing:
             raise ValueError(f"Missing required columns: {', '.join(sorted(missing))}.")
         rows: list[dict[str, str | float]] = []
+        seen_cell_ids: set[str] = set()
         for row_number, row in enumerate(reader, start=2):
             counts = _number(row["total_counts"], "total_counts", row_number)
             genes = _number(row["n_genes"], "n_genes", row_number)
             mito = _number(row["mito_fraction"], "mito_fraction", row_number)
             if counts < 0 or genes < 0 or not 0 <= mito <= 1:
                 raise ValueError(f"Row {row_number}: QC values are out of range.")
+            cell_id = (row["cell_id"] or "").strip()
+            if not cell_id:
+                raise ValueError(f"Row {row_number}: cell_id must not be empty.")
+            if cell_id in seen_cell_ids:
+                raise ValueError(f"Row {row_number}: duplicate cell_id {cell_id!r}.")
+            seen_cell_ids.add(cell_id)
+            cell_type = (row["cell_type"] or "").strip() or "unassigned"
             rows.append(
                 {
-                    "cell_id": (row["cell_id"] or "").strip(),
-                    "cell_type": (row["cell_type"] or "unassigned").strip(),
+                    "cell_id": cell_id,
+                    "cell_type": cell_type,
                     "total_counts": counts,
                     "n_genes": genes,
                     "mito_fraction": mito,
