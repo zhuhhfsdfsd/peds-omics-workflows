@@ -93,7 +93,7 @@ docs/decisions/             # Architecture decision records
 
 ## Contributing
 
-Contributions are welcome, particularly reproducible templates for pediatric disease omics studies. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request. Do not submit identifiable patient data, credentials, or unpublished restricted datasets.
+Contributions are welcome, particularly reproducible templates for pediatric disease omics studies. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request. The issue templates ask for minimal, safe-to-share reproduction details and validation plans. Do not submit identifiable patient data, credentials, or unpublished restricted datasets.
 
 Planned work is listed in [docs/roadmap.md](docs/roadmap.md). Key design rationale is recorded in [ADR-001](docs/decisions/ADR-001-stdlib-first.md).
 

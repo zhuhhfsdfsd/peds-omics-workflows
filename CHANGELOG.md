@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Validate that MR variant identifiers and single-cell identifiers are non-empty and unique.
+- Add issue templates for reproducibility reports and workflow proposals that require safe, shareable examples.
 
 ### Changed
 
