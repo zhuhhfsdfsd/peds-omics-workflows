@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite the repository release and commit hash."
+title: "Peds Omics Workflows"
+version: 0.1.0
+date-released: 2026-08-14
+license: MIT
+abstract: "Reproducible starter workflows for pediatric omics research."
+repository-code: "https://github.com/zhuhhfsdfsd/peds-omics-workflows"

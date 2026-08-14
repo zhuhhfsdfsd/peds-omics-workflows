@@ -1,0 +1,5 @@
+variant,exposure_beta,exposure_se,outcome_beta,outcome_se,aligned
+rs1001,0.12,0.02,0.05,0.03,true
+rs1002,0.09,0.02,0.04,0.02,true
+rs1003,0.15,0.03,0.07,0.03,true
+rs1004,0.11,0.02,0.03,0.02,true
