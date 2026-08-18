@@ -97,6 +97,8 @@ Contributions are welcome, particularly reproducible templates for pediatric dis
 
 Planned work is listed in [docs/roadmap.md](docs/roadmap.md). Key design rationale is recorded in [ADR-001](docs/decisions/ADR-001-stdlib-first.md).
 
+For an optional export of already harmonised `TwoSampleMR`-style data into this project's narrow MR CSV schema, see [the interoperability guide](docs/twosamplemr-interoperability.md). The helper does not replace upstream harmonisation or sensitivity analyses.
+
 ## Citation
 
 Until the project has a citable release, please cite the repository URL, commit hash, release tag, and access date. The maintainer should update [CITATION.cff](CITATION.cff) before the first public release.

@@ -4,10 +4,10 @@ The project should grow through real, reviewable maintenance work rather than fe
 
 ## Next release candidates
 
-1. Add schema validation and a machine-readable analysis manifest.
-2. Add an R interoperability example for `TwoSampleMR` inputs, without duplicating its full functionality.
-3. Add documented synthetic examples for pediatric immune-cell annotation and pseudobulk summaries.
-4. Add sensitivity-analysis adapters after defining clear input and reporting standards.
+1. [x] Add schema validation and a machine-readable analysis manifest.
+2. [x] Add an R interoperability example for `TwoSampleMR` inputs, without duplicating its full functionality.
+3. [ ] Add documented synthetic examples for pediatric immune-cell annotation and pseudobulk summaries.
+4. [ ] Add sensitivity-analysis adapters after defining clear input and reporting standards.
 
 ## Community milestones
 
