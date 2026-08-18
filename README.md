@@ -50,7 +50,7 @@ peds-omics mr --input data/example/mr_instruments.csv --output results/mr_summar
 peds-omics scrna-qc --input data/example/scrna_cells.csv --output results/scrna_qc_summary.json
 ```
 
-The commands create JSON results containing the method, thresholds, summary statistics, and a short interpretation reminder. See [data/example](data/example/) for the required CSV columns.
+The commands create JSON results containing the method, thresholds, summary statistics, and a short interpretation reminder. Add `--manifest results/manifest.json` to create a machine-readable provenance record with the input filename, SHA-256 hash, parameters, and software version. It does not include input rows or full paths. See [data/example](data/example/) for the required CSV columns.
 
 ## Input schemas
 
