@@ -30,3 +30,5 @@ jobs:
         run: python -m peds_omics_workflows.cli mr --input data/example/mr_instruments.csv --output /tmp/mr_summary.json
       - name: Smoke-test single-cell QC workflow
         run: python -m peds_omics_workflows.cli scrna-qc --input data/example/scrna_cells.csv --output /tmp/scrna_qc_summary.json
+      - name: Smoke-test pseudobulk workflow
+        run: python -m peds_omics_workflows.cli pseudobulk --input data/example/pseudobulk_counts.csv --output /tmp/pseudobulk_counts.csv

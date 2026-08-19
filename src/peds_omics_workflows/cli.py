@@ -9,6 +9,7 @@ from pathlib import Path
 
 from . import __version__
 from .mr import ivw_summary, read_instruments
+from .pseudobulk import aggregate_pseudobulk, read_long_counts, write_pseudobulk_csv
 from .scrna import qc_summary, read_cell_metadata
 
 
@@ -75,6 +76,12 @@ def build_parser() -> argparse.ArgumentParser:
     qc.add_argument("--min-counts", type=float, default=500)
     qc.add_argument("--min-genes", type=float, default=200)
     qc.add_argument("--max-mito", type=float, default=0.20)
+
+    pseudobulk = commands.add_parser(
+        "pseudobulk", help="Aggregate long-format counts by donor, cell type, and gene."
+    )
+    pseudobulk.add_argument("--input", required=True, help="Long-format count CSV.")
+    pseudobulk.add_argument("--output", required=True, help="Aggregated pseudobulk CSV path.")
     return parser
 
 
@@ -110,6 +117,8 @@ def main(argv: list[str] | None = None) -> int:
                     "max_mito_fraction": args.max_mito,
                 },
             )
+    elif args.command == "pseudobulk":
+        write_pseudobulk_csv(args.output, aggregate_pseudobulk(read_long_counts(args.input)))
     return 0
 
 

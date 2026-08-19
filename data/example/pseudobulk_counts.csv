@@ -1,0 +1,7 @@
+donor_id,cell_type,gene,count
+donor-001,T_cell,IL7R,10
+donor-001,T_cell,IL7R,3
+donor-001,T_cell,LTB,7
+donor-001,B_cell,CD74,8
+donor-002,T_cell,IL7R,9
+donor-002,B_cell,CD74,11

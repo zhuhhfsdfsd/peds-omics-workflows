@@ -48,6 +48,7 @@ Run the synthetic examples:
 ```bash
 peds-omics mr --input data/example/mr_instruments.csv --output results/mr_summary.json
 peds-omics scrna-qc --input data/example/scrna_cells.csv --output results/scrna_qc_summary.json
+peds-omics pseudobulk --input data/example/pseudobulk_counts.csv --output results/pseudobulk_counts.csv
 ```
 
 The commands create JSON results containing the method, thresholds, summary statistics, and a short interpretation reminder. Add `--manifest results/manifest.json` to create a machine-readable provenance record with the input filename, SHA-256 hash, parameters, and software version. It does not include input rows or full paths. See [data/example](data/example/) for the required CSV columns.
@@ -98,6 +99,8 @@ Contributions are welcome, particularly reproducible templates for pediatric dis
 Planned work is listed in [docs/roadmap.md](docs/roadmap.md). Key design rationale is recorded in [ADR-001](docs/decisions/ADR-001-stdlib-first.md).
 
 For an optional export of already harmonised `TwoSampleMR`-style data into this project's narrow MR CSV schema, see [the interoperability guide](docs/twosamplemr-interoperability.md). The helper does not replace upstream harmonisation or sensitivity analyses.
+
+For a synthetic immune-cell count aggregation example, see [the pseudobulk guide](docs/pseudobulk-example.md). It performs aggregation only, not normalization or inference.
 
 ## Citation
 

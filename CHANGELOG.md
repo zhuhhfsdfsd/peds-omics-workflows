@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - Add issue templates for reproducibility reports and workflow proposals that require safe, shareable examples.
 - Add optional machine-readable manifests with input hashes, workflow parameters, and software versions.
 - Add an R helper and guide for exporting already harmonised `TwoSampleMR`-style data to the narrow MR CSV schema.
+- Add a dependency-free pseudobulk aggregation command with synthetic immune-cell count data and documentation.
 
 ### Changed
 
